@@ -1,7 +1,8 @@
-<%= javascript_include_tag 'facebook_auto_complete.js?X.001' %>
+<%= javascript_include_tag 'facebook_auto_complete.js?X.006' %>
 <h1>Demo of FacebookAutoComplete without the helpers</h1>
 
-<input id="i_like_text" autocomplete="off" maxlength="20" type="text"/>
+Who are you? <input id="i_like_text" autocomplete="off" maxlength="20" type="text"/>
+<p style="height: 200px">Hello world?</p>
 
 <script>
 options = {
@@ -76,3 +77,6 @@ var suggestr = new ajaxSuggestFbml(document.getElementById('i_like_text'), optio
 }
 
 </style>
+<fb:explanation message="Testing">
+</fb:explanation>
+

@@ -29,10 +29,14 @@ function ajaxSuggestFbml(obj, options) {
     .addEventListener('keypress', this.onkeypress.bind(this));
 
   // Create the dropdown list that contains our suggestions
+  // note the offset adjustments might be hacks?
   this.list = document.createElement('div');
   this.list.setClassName('suggest_list')
-    .setStyle({width: this.obj.getOffsetWidth()-2+'px',
-          display: 'none'});
+    .setStyle({
+        width: this.obj.getOffsetWidth()-2+'px',
+        display: 'none',
+        top: this.obj.getAbsoluteTop()-28+'px',
+        left: this.obj.getAbsoluteLeft()-61+'px'});
   this.obj.getParentNode().appendChild(this.list);
 
   // Various flags
