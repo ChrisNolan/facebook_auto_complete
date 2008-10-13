@@ -1,0 +1,9 @@
+This assumes you already have a facebook project running.
+
+Link or copy
+ controllers/facebook_auto_complete_demo_controller.rb to your app/controllers directory
+ views/facebook_auto_complete_demo to your app/views/ directory
+ javascripts/facebook_auto_complete.js to your public/javascripts folder
+ 
+Setup routes if necessary
+

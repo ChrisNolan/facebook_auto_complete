@@ -1,0 +1,78 @@
+<%= javascript_include_tag 'facebook_auto_complete.js?X.001' %>
+<h1>Demo of FacebookAutoComplete without the helpers</h1>
+
+<input id="i_like_text" autocomplete="off" maxlength="20" type="text"/>
+
+<script>
+options = {
+  preMsgTxt: "type for suggestions",  // text to display when nothing has been typed
+  menuOpacity: 94,      // opacity of the menu
+  ajaxUrl: "<%= FACEBOOK['apphost'] -%>facebook_auto_complete_demo/auto_complete_for_no_helpers", // url to your data source, must be absolute URL
+  focus: true,        // whether or not to auto-focus the textbox upon creation
+  onEnter: function(event) {    // handler for hitting the 'enter' key
+    alert('they hit enter!');  // alert doesnt' work on FBJS btw
+  },
+  delayTime: 700,       // amount of idle time after a keypress before making the ajax call
+  clearOnEnter: true      // whether or not to clear the text after they hit enter
+};
+var suggestr = new ajaxSuggestFbml(document.getElementById('i_like_text'), options);
+</script>
+<style>
+.suggest_placeholder {
+  color: #777;
+}
+
+.suggest_found {
+  background: #e1e9f6;
+}
+
+.suggest_pretext {
+  color: #aaa;
+}
+
+.suggest_list {
+  background: transparent;
+  border: 1px solid #bdc7d8;
+  border-top: none;
+  font-size: 11px;
+  margin-top: -1px;
+  overflow: hidden;
+  position: absolute;
+  text-align: left;
+  z-index: 102;
+}
+
+.suggest_list .suggest_suggestion {
+  background: #fff;
+  border-top: 1px solid #ddd;
+  color: #000;
+  cursor: pointer;
+  padding: 3px;
+  opacity: 0.94;
+  width: 100%;
+}
+
+.suggest_list .suggest_suggestion em {
+  background: #d8dfea;
+  color: black;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.suggest_list .suggest_suggestion small {
+  color: #808080;
+  padding-left: 5px;
+}
+
+.suggest_list .suggest_selected {
+  background: #3b5998;
+  color: #fff;
+  opacity: 1;
+}
+
+.suggest_list .suggest_selected em {
+  background: #5670a6;
+  color: #fff;
+}
+
+</style>
